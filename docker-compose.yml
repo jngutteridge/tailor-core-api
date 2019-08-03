@@ -1,0 +1,14 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: tailor
+      POSTGRES_PASSWORD: tailor
+    volumes:
+      - tailor-core-postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+volumes:
+  tailor-core-postgres:
